@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Badge, Button} from 'react-bootstrap';
 
-export default function PizzaCard({data}) {
+export function PizzaCard({data, setOrdred}) {
   return (
     <div>
       <Card className="h-100 shadow-sm bg-white rounded">

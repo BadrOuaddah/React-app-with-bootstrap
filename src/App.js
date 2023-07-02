@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 import { Container, Row, Col } from "react-bootstrap";
@@ -6,20 +7,25 @@ import { Confirmation } from "./components/Confirmation/Confirmation";
 import pizzas from "./data.json";
 
 function App() {
+  const [ordred, setOrdred] = useState(false);
+
+  function displayConfirmation() {
+    setOrdred(true);
+    setTimeout(() => {
+      setOrdred(false);
+    })
+  }
   return (
     <div>
-      <Confirmation />
+      {ordred && <Confirmation toggle={setOrdred} />}
+      {/* <Confirmation/> */}
       <Container>
         <Row>
-          {pizzas.map(data =>{
-            <div>
-              {data.id}
-              {data.name}
-              {data.image}
-              {data.price}
-              {data.desc}
-            </div>
-          })}
+          {pizzas.map((data) => 
+            <Col xs={3} className="mb-5" key={data.id} >
+              <PizzaCard data={data} setOrdred={displayConfirmation} />
+            </Col>
+          )}
         </Row>
       </Container>
     </div>
