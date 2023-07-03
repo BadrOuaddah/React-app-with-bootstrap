@@ -13,7 +13,7 @@ function App() {
     setOrdred(true);
     setTimeout(() => {
       setOrdred(false);
-    })
+    },3000)
   }
   return (
     <div>
