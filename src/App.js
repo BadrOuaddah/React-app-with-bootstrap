@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { PizzaCard } from "./components/PizzaCard/PizzaCard";
 import { Confirmation } from "./components/Confirmation/Confirmation";
 import pizzas from "./data.json";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [ordred, setOrdred] = useState(false);
@@ -13,19 +14,19 @@ function App() {
     setOrdred(true);
     setTimeout(() => {
       setOrdred(false);
-    },3000)
+    }, 3000);
   }
   return (
     <div>
+      <Navbar />
       {ordred && <Confirmation toggle={setOrdred} />}
-      {/* <Confirmation/> */}
       <Container>
         <Row>
-          {pizzas.map((data) => 
-            <Col xs={3} className="mb-5" key={data.id} >
+          {pizzas.map((data) => (
+            <Col xs={3} className="mb-5" key={data.id}>
               <PizzaCard data={data} setOrdred={displayConfirmation} />
             </Col>
-          )}
+          ))}
         </Row>
       </Container>
     </div>
