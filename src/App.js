@@ -5,7 +5,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { PizzaCard } from "./components/PizzaCard/PizzaCard";
 import { Confirmation } from "./components/Confirmation/Confirmation";
 import pizzas from "./data.json";
-import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [ordred, setOrdred] = useState(false);
@@ -18,7 +17,6 @@ function App() {
   }
   return (
     <div>
-      <Navbar />
       {ordred && <Confirmation toggle={setOrdred} />}
       <Container>
         <Row>
