@@ -13,11 +13,13 @@ function App() {
     setOrdred(true);
     setTimeout(() => {
       setOrdred(false);
-    }, 3000);
+    }, 70000);
   }
   return (
     <div>
-      {ordred && <Confirmation toggle={setOrdred} />}
+      {pizzas.map((dataPizza) => (<div>
+      {ordred && <Confirmation toggle={setOrdred} pizzas={dataPizza} />}
+      </div>))}
       <Container>
         <Row>
           {pizzas.map((data) => (
