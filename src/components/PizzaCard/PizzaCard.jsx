@@ -14,7 +14,7 @@ export function PizzaCard({data, setOrdred}) {
             </Badge>
         </div>
             <Card.Text className='text-secondary'>{data.desc}</Card.Text>
-            <button onClick={() => setOrdred()}
+            <button onClick={() => setOrdred(data)}
             className='mt-auto font-weight-bold btn btn-success'>
                 Order Pizza 🍕
             </button>

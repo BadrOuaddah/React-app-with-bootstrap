@@ -7,19 +7,19 @@ import { Confirmation } from "./components/Confirmation/Confirmation";
 import pizzas from "./data.json";
 
 function App() {
-  const [ordred, setOrdred] = useState(false);
+  const [ordred, setOrdred] = useState(null);
 
-  function displayConfirmation() {
-    setOrdred(true);
+  //? const [ordredPizza, setordredPizza] = useState(null);
+
+  function displayConfirmation(pizzas) {
+    setOrdred(pizzas);
     setTimeout(() => {
-      setOrdred(false);
+      setOrdred(null);
     }, 70000);
   }
   return (
     <div>
-      {pizzas.map((dataPizza) => (<div>
-      {ordred && <Confirmation toggle={setOrdred} pizzas={dataPizza} />}
-      </div>))}
+      {ordred && <Confirmation toggle={() => setOrdred(null)} pizzas={ordred}/>}
       <Container>
         <Row>
           {pizzas.map((data) => (
