@@ -1,6 +1,7 @@
 ## About The Project 
 #### React application with bootstrap (PIZZA APP 🍕)
-![demo](https://github.com/BadrOuaddah/React-app-with-bootstrap/assets/119801735/26b336d1-dd40-4069-93bb-0240f16941d0)
+![demo](https://github.com/BadrOuaddah/React-app-with-bootstrap/assets/119801735/7a262747-d41a-47a7-96ac-dcf88dfe1b66)
+
 
 ### Built With
 
