@@ -4,25 +4,25 @@ import "./App.scss";
 import { Container, Row, Col } from "react-bootstrap";
 import { PizzaCard } from "./components/PizzaCard/PizzaCard";
 import { Confirmation } from "./components/Confirmation/Confirmation";
-import pizzas from "./data.json";
+import pizza from "./data.json";
 
 function App() {
   const [ordred, setOrdred] = useState(null);
 
   //? const [ordredPizza, setordredPizza] = useState(null);
 
-  function displayConfirmation(pizzas) {
-    setOrdred(pizzas);
+  function displayConfirmation(pizza) {
+    setOrdred(pizza);
     setTimeout(() => {
       setOrdred(null);
     }, 70000);
   }
   return (
     <div>
-      {ordred && <Confirmation toggle={() => setOrdred(null)} pizzas={ordred}/>}
+      {ordred && <Confirmation toggle={() => setOrdred(null)} pizza={ordred}/>}
       <Container>
         <Row>
-          {pizzas.map((data) => (
+          {pizza.map((data) => (
             <Col xs={3} className="mb-5" key={data.id}>
               <PizzaCard data={data} setOrdred={displayConfirmation} />
             </Col>
