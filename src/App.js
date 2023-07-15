@@ -9,8 +9,6 @@ import pizza from "./data.json";
 function App() {
   const [ordred, setOrdred] = useState(null);
 
-  //? const [ordredPizza, setordredPizza] = useState(null);
-
   function displayConfirmation(pizza) {
     setOrdred(pizza);
     setTimeout(() => {
@@ -19,7 +17,7 @@ function App() {
   }
   return (
     <div>
-      {ordred && <Confirmation toggle={() => setOrdred(null)} pizza={ordred}/>}
+      {ordred && <Confirmation toggle={() => setOrdred(null)} pizza={ordred} />}
       <Container>
         <Row>
           {pizza.map((data) => (
